@@ -1,7 +1,9 @@
 import Orders from "./orders";
-import type { CreateOrderParams } from './orders';
 
-export type {CreateOrderParams};
-export default {
-  ...Orders
-};
+export default function Pwinty(
+  merchantId: string,
+  restApiKey: string,
+  host: Host = "https://sandbox.pwinty.com"
+) {
+  return { ...Orders(merchantId, restApiKey, host) };
+}
